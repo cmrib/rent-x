@@ -9,12 +9,9 @@ export const Header = styled.View`
     background-color: ${({ theme }) => theme.colors.header};
     height: 113px;
     width: 100%;
-    justify-content: flex-end;
-    padding: 0px 0px 16px 32px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:space-between;
+    padding: 32px 24px;
 `;
 
-export const Title = styled.Text`    
-  color: ${({ theme }) => theme.colors.title};
-  font-family: ${({ theme }) => theme.fonts.primary_500};
-  font-size: 24px;
-`;
