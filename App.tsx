@@ -5,6 +5,7 @@ import { Archivo_400Regular, Archivo_500Medium, Archivo_600SemiBold } from '@exp
 import * as SplashScreen from 'expo-splash-screen';
 import { ThemeProvider } from 'styled-components'
 import theme from './src/styles/theme';
+import { CarDetails } from './src/screens/CarDetails';
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -25,7 +26,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <CarDetails />
     </ThemeProvider>
   );
 }
