@@ -17,6 +17,7 @@ interface Props {
 }
 
 export function Car({ data }: Props) {
+    console.log(data)
     return (
         <Container>
             <Details>

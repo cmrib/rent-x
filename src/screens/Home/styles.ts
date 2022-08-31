@@ -1,4 +1,5 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 export const Container = styled.View`
     flex: 1;   
@@ -14,4 +15,14 @@ export const Header = styled.View`
     justify-content:space-between;
     padding: 32px 24px;
 `;
+
+export const CarList = styled(FlatList).attrs({
+    contentContainerStyle: {
+        padding: 24
+    },
+    showsVerticalScrollIndicator: false
+})`
+
+
+`
 

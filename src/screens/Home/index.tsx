@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header } from './styles';
+import { Container, Header, CarList } from './styles';
 import { StatusBar } from 'react-native';
 import Logo from '../../assets/logo.svg'
 import { RFValue } from 'react-native-responsive-fontsize'
@@ -16,6 +16,8 @@ const CarData = {
     thumbnail: 'https://cdn.wheel-size.com/automobile/body/audi-rs5-2020-2022-1613028936.4473815.png'
 }
 
+
+
 export function Home() {
     return (
         <Container>
@@ -25,9 +27,14 @@ export function Home() {
                 <TotalCars />
             </Header>
 
-            <Car
-                data={CarData}
+            <CarList
+                data={[1, 2, 3]}
+                keyExtractor={item => String(item)}
+                renderItem={({ item }) => <Car data={CarData} />}
             />
+
+
+
 
         </Container>
     )
