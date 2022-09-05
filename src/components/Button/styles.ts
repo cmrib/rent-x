@@ -1,12 +1,13 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
+import { TouchableOpacityProps } from "react-native";
 
 
-interface ContainerProps {
+interface ButtonProps extends TouchableOpacityProps {
     color: string;
 }
 
-export const Container = styled.View<ContainerProps>`
+export const Container = styled.TouchableOpacity<ButtonProps>`
     width: 100%;
     padding: 19px;
     align-items: center;

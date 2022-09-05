@@ -71,10 +71,6 @@ export function CarDetails() {
                 </Footer>
 
             </Container>
-
-
-
         </>
-
     )
 }
