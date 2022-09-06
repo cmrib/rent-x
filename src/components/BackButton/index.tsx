@@ -15,7 +15,7 @@ export function BackButton({ color, ...rest }: Props) {
         <Container
             {...rest}
         >
-            <MaterialIcons name="arrow-back" color={color ? color : theme.colors.text} size={32} />
+            <MaterialIcons name="chevron-left" color={color ? color : theme.colors.text} size={24} />
         </Container>
     )
 
