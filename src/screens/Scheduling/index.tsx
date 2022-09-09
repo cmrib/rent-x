@@ -6,6 +6,7 @@ import { Container, Header, Title, RentalPeriod, DateInfo, DateTitle, DateValue,
 import ArrowSvg from '../../assets/arrow.svg'
 import { StatusBar } from 'react-native'
 import { Button } from '../../components/Button'
+import { Calendar } from '../../components/Calendar'
 
 export function Scheduling() {
 
@@ -50,10 +51,10 @@ export function Scheduling() {
 
 
             <Content>
-
+                <Calendar />
             </Content>
             <Footer>
-                <Button title="Agendar" />
+                <Button title="Confirmar" />
             </Footer>
 
         </Container>
