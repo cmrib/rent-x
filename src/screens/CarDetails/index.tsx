@@ -10,67 +10,75 @@ import forceSvg from '../../assets/force.svg'
 import gasolineSvg from '../../assets/gasoline.svg'
 import exchangeSvg from '../../assets/exchange.svg'
 import peopleSvg from '../../assets/people.svg'
+import { useNavigation } from '@react-navigation/native';
 
 
 export function CarDetails() {
+
+    const navigation = useNavigation<any>()
+
+    function handleConfirmRental() {
+        navigation.navigate('Scheduling')
+    }
+
     return (
-        <>
-            <Container>
-                <Header>
-                    <BackButton onPress={() => { console.log('cicero') }} />
-                </Header>
 
-                <CarImages>
-                    <ImageSlider imagesUrl={['https://cdn.wheel-size.com/automobile/body/audi-rs5-2020-2022-1613028936.4473815.png']} />
-                </CarImages>
+        <Container>
+            <Header>
+                <BackButton onPress={() => { navigation.goBack() }} />
+            </Header>
 
-                <Content>
-                    <Details>
-                        <Description>
-                            <Brand>Lamborghini</Brand>
-                            <Name>Huracan</Name>
-                        </Description>
+            <CarImages>
+                <ImageSlider imagesUrl={['https://cdn.wheel-size.com/automobile/body/audi-rs5-2020-2022-1613028936.4473815.png']} />
+            </CarImages>
 
-                        <Rent>
-                            <Period>Ao dia</Period>
-                            <Price>R$ 580</Price>
-                        </Rent>
-                    </Details>
+            <Content>
+                <Details>
+                    <Description>
+                        <Brand>Lamborghini</Brand>
+                        <Name>Huracan</Name>
+                    </Description>
 
-                    <Acessories>
-                        <Acessory name="380Km/h" icon={speedSvg} />
-                        <Acessory name="3.2s" icon={accelerationSvg} />
-                        <Acessory name="800 HP" icon={forceSvg} />
-                        <Acessory name="Gasolina" icon={gasolineSvg} />
-                        <Acessory name="Auto" icon={exchangeSvg} />
-                        <Acessory name="2 pessoas" icon={peopleSvg} />
-                    </Acessories>
+                    <Rent>
+                        <Period>Ao dia</Period>
+                        <Price>R$ 580</Price>
+                    </Rent>
+                </Details>
 
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                    <About>
-                        Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
-                    </About>
-                </Content>
+                <Acessories>
+                    <Acessory name="380Km/h" icon={speedSvg} />
+                    <Acessory name="3.2s" icon={accelerationSvg} />
+                    <Acessory name="800 HP" icon={forceSvg} />
+                    <Acessory name="Gasolina" icon={gasolineSvg} />
+                    <Acessory name="Auto" icon={exchangeSvg} />
+                    <Acessory name="2 pessoas" icon={peopleSvg} />
+                </Acessories>
 
-                <Footer>
-                    <Button title="Confirmar" />
-                </Footer>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+                <About>
+                    Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
+                </About>
+            </Content>
 
-            </Container>
-        </>
+            <Footer>
+                <Button title="Escolher período do aluguel" onPress={handleConfirmRental} />
+            </Footer>
+
+        </Container>
+
     )
 }
