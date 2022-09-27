@@ -8,6 +8,7 @@ import { Car } from '../../components/Car';
 import { useNavigation } from '@react-navigation/native';
 import { api } from '../../services/api';
 import { CarDTO } from '../../dtos/CarDTO'
+import { Load } from '../../components/Load';
 
 
 
@@ -40,7 +41,7 @@ export function Home() {
     }
 
     const [cars, setCars] = useState<CarDTO[]>([])
-    const [locading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
 
     useEffect(() => {
@@ -65,11 +66,13 @@ export function Home() {
                 <TotalCars />
             </Header>
 
-            <CarList
+
+            {loading ? <Load /> : <CarList
                 data={cars}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => <Car data={item} onPress={handleCarDetails} />}
-            />
+            />}
+
         </Container>
     )
 }

@@ -5,6 +5,8 @@ import { CarDTO } from '../../dtos/CarDTO';
 export const Container = styled.View`
     flex: 1;   
     background-color: ${({ theme }) => theme.colors.background_primary};
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Header = styled.View`    
