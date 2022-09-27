@@ -30,7 +30,7 @@ export function SchedulingDetails() {
 
         <Container>
             <Header>
-                <BackButton onPress={() => { console.log('cicero') }} />
+                <BackButton onPress={() => { navigation.goBack() }} />
             </Header>
 
             <CarImages>
