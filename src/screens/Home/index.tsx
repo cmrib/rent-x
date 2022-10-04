@@ -11,33 +11,12 @@ import { CarDTO } from '../../dtos/CarDTO'
 import { Load } from '../../components/Load';
 
 
-
-const CarData = {
-    brand: 'audi',
-    name: 'RS 5 Coupé',
-    rent: {
-        period: 'ao dia',
-        price: 120
-    },
-    thumbnail: 'https://cdn.wheel-size.com/automobile/body/audi-rs5-2020-2022-1613028936.4473815.png'
-}
-
-interface CarProps {
-    brand: string;
-    name: string;
-    rent: {
-        period: string;
-        price: number
-    },
-    thumbnail: string
-}
-
 export function Home() {
 
     const navigation = useNavigation<any>()
 
-    function handleCarDetails() {
-        navigation.navigate('CarDetails')
+    function handleCarDetails(car: CarDTO) {
+        navigation.navigate('CarDetails', { car })
     }
 
     const [cars, setCars] = useState<CarDTO[]>([])
@@ -70,7 +49,7 @@ export function Home() {
             {loading ? <Load /> : <CarList
                 data={cars}
                 keyExtractor={item => String(item.id)}
-                renderItem={({ item }) => <Car data={item} onPress={handleCarDetails} />}
+                renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
             />}
 
         </Container>
