@@ -3,43 +3,28 @@ import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Acessory } from '../../components/Acessory';
 import { Button } from '../../components/Button';
-import speedSvg from '../../assets/speed.svg'
-import accelerationSvg from '../../assets/acceleration.svg'
-import forceSvg from '../../assets/force.svg'
-import gasolineSvg from '../../assets/gasoline.svg'
-import exchangeSvg from '../../assets/exchange.svg'
-import peopleSvg from '../../assets/people.svg'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { CarDTO } from '../../dtos/CarDTO';
-
+import { getAcessoryIcon } from '../../utils/getAccessoryIcon';
 
 interface Params {
     car: CarDTO
 }
 
-const iconType = {
-    'exchange': exchangeSvg,
-    'speed': speedSvg,
-    'acceleration': accelerationSvg,
-    'seats': peopleSvg,
-    'gasoline_motor': gasolineSvg,
-    'turning_diameter': forceSvg
-}
-
 export function CarDetails() {
 
-    const navigation = useNavigation<any>()
+    const navigation = useNavigation<any>();
 
     const route = useRoute();
 
-    const { car } = route.params as Params
+    const { car } = route.params as Params;
 
     function handleConfirmRental() {
-        navigation.navigate('Scheduling')
+        navigation.navigate('Scheduling');
     }
 
     function handleBack() {
-        navigation.goBack()
+        navigation.goBack();
     }
 
     return (
@@ -70,7 +55,7 @@ export function CarDetails() {
                     {car.accessories.map(acessory => <Acessory
                         key={acessory.type}
                         name={acessory.name}
-                        icon={speedSvg}
+                        icon={getAcessoryIcon(acessory.type)}
                     />)}
 
                 </Acessories>
