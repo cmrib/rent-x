@@ -41,5 +41,4 @@ export const MyCarsButton = styled.TouchableOpacity`
     position: absolute;
     right: 23px;
     bottom: 13px;
-    opacity: 0.85;
 `

@@ -42,7 +42,7 @@ export function SchedulingDetails() {
             ...dates
         ]
 
-        await api.post('schedyles_byuser', {
+        await api.post('schedules_byuser', {
             user_id: 1,
             car
         })
@@ -53,11 +53,10 @@ export function SchedulingDetails() {
         })
             .then(response => {
                 console.log(response)
-                navigation.navigate('Home')
             })
             .catch(() => Alert.alert('Não foi possível fazer o agendamento'))
 
-        //navigation.navigate('SchedulingComplete')
+        navigation.navigate('SchedulingComplete')
     }
 
     const routes = useRoute()
