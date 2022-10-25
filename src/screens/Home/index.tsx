@@ -13,7 +13,6 @@ import { Ionicons } from '@expo/vector-icons'
 import { useTheme } from 'styled-components/native';
 
 
-
 export function Home() {
 
     const theme = useTheme()
@@ -53,13 +52,6 @@ export function Home() {
                 <TotalCars />
             </Header>
 
-
-            {/* {loading ? <Load /> : <CarList
-                data={cars}
-                keyExtractor={item => String(item.id)}
-                renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
-            />} */}
-
             {loading ? <Load /> :
 
                 <Content>
@@ -70,8 +62,6 @@ export function Home() {
                     />
                 </Content>
             }
-
-
 
             <MyCarsButton onPress={handleOpenMyCars}>
                 <Ionicons name="ios-car-sport" color={theme.colors.shape} size={32} />
