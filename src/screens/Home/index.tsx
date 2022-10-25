@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Header, CarList, MyCarsButton } from './styles';
+import { Container, Header, CarList, MyCarsButton, Content } from './styles';
 import { StatusBar } from 'react-native';
 import Logo from '../../assets/logo.svg'
 import { RFValue } from 'react-native-responsive-fontsize'
@@ -54,11 +54,24 @@ export function Home() {
             </Header>
 
 
-            {loading ? <Load /> : <CarList
+            {/* {loading ? <Load /> : <CarList
                 data={cars}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
-            />}
+            />} */}
+
+            {loading ? <Load /> :
+
+                <Content>
+                    <CarList
+                        data={cars}
+                        keyExtractor={item => String(item.id)}
+                        renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
+                    />
+                </Content>
+            }
+
+
 
             <MyCarsButton onPress={handleOpenMyCars}>
                 <Ionicons name="ios-car-sport" color={theme.colors.shape} size={32} />
