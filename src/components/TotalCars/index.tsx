@@ -1,7 +1,11 @@
 import { Message } from "./styles"
 
-export function TotalCars() {
+interface TotalCarsProps {
+    carTotal: number
+}
+
+export function TotalCars({ carTotal }: TotalCarsProps) {
     return (
-        <Message>Total de 12 carros</Message>
+        <Message>Total de {carTotal} carros</Message>
     )
 }

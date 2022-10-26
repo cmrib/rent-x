@@ -54,7 +54,7 @@ export function SchedulingDetails() {
             unavailable_dates
         })
             .then(response => {
-                console.log(response)
+
             })
             .catch(() => Alert.alert('Não foi possível fazer o agendamento'))
 

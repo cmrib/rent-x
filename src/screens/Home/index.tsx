@@ -49,7 +49,9 @@ export function Home() {
             <StatusBar barStyle='light-content' backgroundColor='transparent' translucent />
             <Header>
                 <Logo width={RFValue(108)} height={RFValue(12)} />
-                <TotalCars />
+
+                {!loading && <TotalCars carTotal={cars.length} />}
+
             </Header>
 
             {loading ? <Load /> :
